@@ -1,0 +1,1 @@
+go get go.opentelemetry.io/otel/exporters/trace/jaeger

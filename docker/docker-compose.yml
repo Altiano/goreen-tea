@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  # Mongodb
+  mongodb:
+    container_name: goreentea-mongodb
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    volumes:
+      - ./.mongo-data:/data/db
+  
+  # Jaeger
+  jaeger:
+    container_name: goreentea-jeager
+    image: jaegertracing/all-in-one:1.22
+    ports:
+      - "16686:16686"
+      - "14268:14268"

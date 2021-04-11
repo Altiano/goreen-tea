@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: -deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appname-pod
+  template:
+    metadata:
+      labels:
+        app: appname-pod
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: appname-container
+          image: appname-image
+          ports:
+            - name: main
+              containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: appname-config
+            - secretRef:
+                name: appname-secret
+          resources:
+            limits:
+              cpu: 0
+              memory: 0

@@ -1,0 +1,3 @@
+cd di
+wire
+cd ..

@@ -1,0 +1,55 @@
+{
+	// Place your golang-boilerplate workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"table-driven test (boilerplate)": {
+		"scope": "go",
+		"prefix": "tabledriven",
+		"body": [
+			"package $1",
+			"",
+			"import (",
+			"  \"testing\"",
+			"",
+			"  \"github.com/stretchr/testify/assert\"",
+			")",
+			"",
+			"func Test${2:MyFunction}(t *testing.T) {",
+			"  testCases := map[string]struct {",
+			"    var1 string",
+			"    want string",
+			"    wantErr error",
+			"  }{",
+			"    \"success\": {",
+			"      var1: \"\",",
+			"      want: \"\",",
+			"      wantErr: nil,",
+			"    },",
+			"  }",
+			"  ",
+			"  for name, tc := range testCases {",
+			"    t.Run(name, func(t *testing.T) {",
+			"      m := setupDomain(t)",
+			"      ",
+			"      defer func() {",
+			"        // assert",
+			"        result, err := m.sut.${2:MyFunction}(m.Ctx, tc.var1)",
+			"        ",
+			"        // act",
+			"        assert.Equal(t, tc.want, result)",
+			"        assert.Equal(t, tc.wantErr, err)",
+			"      }()",
+			"      ",
+			"      // arrange",
+			"    })",
+			"  }",
+			"}",
+
+		],
+		"description": "Scaffold TestMyFuntion() tests"
+	}
+}

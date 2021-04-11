@@ -1,0 +1,50 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Wire (Generate)",
+            "type": "shell",
+            "command": ". ./.misc/gen/gen_wire.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "MongoDB (local)",
+            "type": "shell",
+            "command": ". ./.misc/local_mongo.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Template (repo_test.go)",
+            "type": "shell",
+            "command": ". ./.misc/gen/gen_repoTest.sh ${input:domainName}",
+            "problemMatcher": [],
+        },
+        {
+            "label": "Docker Build (prod)",
+            "type": "shell",
+            "command": ". ./.misc/build_prod_image.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Mockgen (repo)",
+            "type": "shell",
+            "command": ". ./.misc/gen/gen_repoMock.sh ${input:domainName}",
+            "problemMatcher": [],
+        },
+        {
+            "label": "Mockgen (domain)",
+            "type": "shell",
+            "command": ". ./.misc/gen/gen_domainMock.sh ${input:domainName}",
+            "problemMatcher": [],
+        },
+    ],
+    "inputs": [
+        {
+            "id": "domainName",
+            "description": "Domain Name:",
+            "type": "promptString"
+        },
+    ]
+}

@@ -1,0 +1,7 @@
+POST http://localhost:8888/customerOrder
+
+{
+    "Email": "satoshi@domain.com",
+    "Orders": ["satay", "fried rice", "meatball", "green tea"],
+    "ReferralCode": 0, // indicates satoshi will not use any referral code 
+}

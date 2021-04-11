@@ -1,0 +1,8 @@
+k8s/build.yaml
+k8s/kustomize
+.env
+.DS_Store
+mongo-data
+.mongo-data
+golang-boilerplate
+__debug_bin

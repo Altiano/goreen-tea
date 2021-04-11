@@ -1,0 +1,90 @@
+variables:
+  APP_NAME: "monday-api"
+
+  # CONTAINER IMAGE
+  # Kaniko will use:
+  # - CONTAINER_REGISTRY_USERNAME
+  # - CONTAINER_REGISTRY_PASSWORD
+  # to authenticate to CONTAINER_REGISTRY
+  CONTAINER_REGISTRY: "$CI_REGISTRY"
+  CONTAINER_REGISTRY_USERNAME: "$CI_REGISTRY_USER"
+  CONTAINER_REGISTRY_PASSWORD: "$CI_REGISTRY_PASSWORD"
+  # Then, it'll take APP_DOCKERFILE as the bulid process
+  # and upload the image as APP_IMAGE
+  APP_DOCKERFILE: "./docker/prod.dockerfile"
+  APP_IMAGE: "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+
+  # K8S MANIFEST
+  # On K8S_MANIFEST_SOURCE directory,
+  # And with respect to APP_IMAGE,
+  # Kustomize will do the build and output as K8S_MANIFEST_BUILD
+  K8S_MANIFEST_SOURCE: "./k8s/prod"
+  K8S_MANIFEST_BUILD: "build.yaml"
+
+  # NETWORK CONFIGURATION
+  # SSH client will use these settings to connect to the target server
+  # You should determine whether your pipeline need it or not!
+  NETWORK_SSH_PRIVATE_KEY: "$SSH_PRIVATE_KEY"
+  NETWORK_SSH_KNOWN_HOSTS: "$SSH_KNOWN_HOSTS"
+  NETWORK_SSH_CONFIG: "$SSH_CONFIG"
+
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  stage: test
+  image:
+    name: golang:1.16-buster
+  script:
+    - go test ./...
+
+build:
+  stage: build
+  only:
+    - master
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - echo "$CONTAINER_REGISTRY $CONTAINER_REGISTRY_USERNAME $CONTAINER_REGISTRY_PASSWORD"
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$CONTAINER_REGISTRY\":{\"username\":\"$CONTAINER_REGISTRY_USERNAME\",\"password\":\"$CONTAINER_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context $CI_PROJECT_DIR
+      --dockerfile $APP_DOCKERFILE
+      --destination $APP_IMAGE
+
+deploy:
+  stage: deploy
+  cache:
+    key: kustomize
+    paths:
+      - $CI_PROJECT_DIR/$K8S_MANIFEST_SOURCE/kustomize
+  variables:
+    KUSTOMIZE_INSTALL_SCRIPT: https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh
+  script:
+    # Prepare ssh
+    - eval $(ssh-agent -s) # setup env vars required for ssh
+    - echo "$NETWORK_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$NETWORK_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - echo "$NETWORK_SSH_CONFIG" > ~/.ssh/config
+    - chmod 644 ~/.ssh/known_hosts
+
+    # Workdir
+    - cd $K8S_MANIFEST_SOURCE
+
+    # Download kustomize when necessary
+    - '[ ! -f ./kustomize ] &&
+      curl -s "$KUSTOMIZE_INSTALL_SCRIPT" | bash'
+
+    # Build k8s manifest
+    - ./kustomize edit set image $APP_IMAGE
+    - ./kustomize build ./ > $K8S_MANIFEST_BUILD
+  artifacts:
+      paths:
+        - $K8S_MANIFEST_SOURCE/$K8S_MANIFEST_BUILD
+      expire_in: 1 week
