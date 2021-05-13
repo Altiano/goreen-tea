@@ -26,17 +26,17 @@ import (
 // Injectors from injectApp.go:
 
 func InjectApp(config shared.Config) app.App {
-	manager := trace.NewOtelManager(config)
-	emailManager := email.NewManager(config)
+	tracer := trace.NewOtelManager(config)
+	emailer := email.NewManager(config)
 	db := database.NewMongoDB(config)
-	repoRepo := repo.NewRepo(manager, db)
-	domain := customerOrder.NewDomain(manager, emailManager, repoRepo)
-	repo3 := repo2.NewRepo(db, manager)
-	waiterDomain := waiter.NewDomain(manager, repo3)
-	assistanceCoordinatorDomain := assistanceCoordinator.NewDomain(manager, waiterDomain, domain)
-	memcacheManager := memcache.NewDummy(config)
-	visitorCounterDomain := visitorCounter.NewDomain(manager, memcacheManager)
-	appApp := app.NewApp(manager, domain, assistanceCoordinatorDomain, visitorCounterDomain)
+	repoRepo := repo.NewRepo(tracer, db)
+	domain := customerOrder.NewDomain(tracer, emailer, repoRepo)
+	repo3 := repo2.NewRepo(db, tracer)
+	waiterDomain := waiter.NewDomain(tracer, repo3)
+	assistanceCoordinatorDomain := assistanceCoordinator.NewDomain(tracer, waiterDomain, domain)
+	memcacher := memcache.NewDummy(config)
+	visitorCounterDomain := visitorCounter.NewDomain(tracer, memcacher)
+	appApp := app.NewApp(tracer, domain, assistanceCoordinatorDomain, visitorCounterDomain)
 	return appApp
 }
 
@@ -47,10 +47,18 @@ func InjectDummyCLI(config shared.Config, app2 app.App) frameworks.Server {
 	return server
 }
 
+// Injectors from injectEcho.go:
+
+func InjectEcho(config shared.Config, app2 app.App) frameworks.Server {
+	tracer := trace.NewOtelManager(config)
+	server := rest.NewEcho(config, tracer, app2)
+	return server
+}
+
 // Injectors from injectIris.go:
 
 func InjectIris(config shared.Config, app2 app.App) frameworks.Server {
-	manager := trace.NewOtelManager(config)
-	server := rest.NewIris(config, manager, app2)
+	tracer := trace.NewOtelManager(config)
+	server := rest.NewIris(config, tracer, app2)
 	return server
 }

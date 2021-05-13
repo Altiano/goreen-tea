@@ -24,7 +24,7 @@ func InjectApp(config shared.Config) application.App {
 			database.NewMongoDB,
 			trace.NewOtelManager,
 			email.NewManager,
-			memcache.NewManager,
+			memcache.NewDummy,
 
 			coRepo.NewRepo,
 			customerOrder.NewDomain,

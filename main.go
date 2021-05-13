@@ -15,7 +15,9 @@ func main() {
 	// wire DI
 	app := di.InjectApp(config)
 	cli := di.InjectDummyCLI(config, app)
-	rest := di.InjectIris(config, app)
+
+	// rest := di.InjectIris(config, app)
+	rest := di.InjectEcho(config, app)
 
 	fmt.Println("Running... 🔥")
 

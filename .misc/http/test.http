@@ -1,7 +1,8 @@
 POST http://localhost:8888/customerOrder
+Content-Type: application/json
 
 {
     "Email": "satoshi@domain.com",
     "Orders": ["satay", "fried rice", "meatball", "green tea"],
-    "ReferralCode": 0, // indicates satoshi will not use any referral code 
+    "ReferralCode": 0
 }
