@@ -2,7 +2,7 @@ package mocks
 
 import (
 	"github.com/golang/mock/gomock"
-	memcacheMocks "gitlab.com/altiano/golang-boilerplate/src/frameworks/memcache/mocks"
+	memcacheMocks "gitlab.com/altiano/goreen-tea/src/frameworks/memcache/mocks"
 )
 
 type (

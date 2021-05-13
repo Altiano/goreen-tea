@@ -3,7 +3,7 @@ package repo
 import (
 	"testing"
 
-	"gitlab.com/altiano/golang-boilerplate/src/mocks"
+	"gitlab.com/altiano/goreen-tea/src/mocks"
 )
 
 func setupRepo(t *testing.T) (m struct {

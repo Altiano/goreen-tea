@@ -6,21 +6,21 @@
 package di
 
 import (
-	"gitlab.com/altiano/golang-boilerplate/src/app"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/assistanceCoordinator"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/repo"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/visitorCounter"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/waiter"
-	repo2 "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/repo"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/cli"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/database"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/email"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/memcache"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/rest"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/app"
+	"gitlab.com/altiano/goreen-tea/src/domain/assistanceCoordinator"
+	"gitlab.com/altiano/goreen-tea/src/domain/customerOrder"
+	"gitlab.com/altiano/goreen-tea/src/domain/customerOrder/repo"
+	"gitlab.com/altiano/goreen-tea/src/domain/visitorCounter"
+	"gitlab.com/altiano/goreen-tea/src/domain/waiter"
+	repo2 "gitlab.com/altiano/goreen-tea/src/domain/waiter/repo"
+	"gitlab.com/altiano/goreen-tea/src/frameworks"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/cli"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/database"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/email"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/memcache"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/rest"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 // Injectors from injectApp.go:

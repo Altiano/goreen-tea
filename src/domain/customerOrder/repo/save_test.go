@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )

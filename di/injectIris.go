@@ -4,11 +4,11 @@ package di
 
 import (
 	"github.com/google/wire"
-	"gitlab.com/altiano/golang-boilerplate/src/app"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/rest"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/app"
+	"gitlab.com/altiano/goreen-tea/src/frameworks"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/rest"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 func InjectIris(config shared.Config, app app.App) frameworks.Server {

@@ -6,10 +6,10 @@ import (
 	"net/http"
 
 	"github.com/kataras/iris/v12"
-	"gitlab.com/altiano/golang-boilerplate/src/app"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/app"
+	"gitlab.com/altiano/goreen-tea/src/frameworks"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 type (

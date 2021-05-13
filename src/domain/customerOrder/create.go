@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

@@ -1,7 +1,7 @@
 package email
 
 import (
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 type (

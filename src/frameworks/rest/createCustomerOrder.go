@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/kataras/iris/v12"
-	"gitlab.com/altiano/golang-boilerplate/src/app"
+	"gitlab.com/altiano/goreen-tea/src/app"
 )
 
 func (i irisRest) createCustomerOrder(irisCtx iris.Context) {

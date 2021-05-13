@@ -9,7 +9,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
 )
 
 // MockRepo is a mock of Repo interface.

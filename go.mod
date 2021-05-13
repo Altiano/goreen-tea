@@ -1,4 +1,4 @@
-module gitlab.com/altiano/golang-boilerplate
+module gitlab.com/altiano/goreen-tea
 
 go 1.16
 

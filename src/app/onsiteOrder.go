@@ -3,8 +3,8 @@ package app
 import (
 	"context"
 
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 

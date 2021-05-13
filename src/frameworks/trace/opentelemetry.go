@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/trace/jaeger"
 	"go.opentelemetry.io/otel/sdk/resource"

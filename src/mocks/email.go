@@ -2,7 +2,7 @@ package mocks
 
 import (
 	"github.com/golang/mock/gomock"
-	emailMocks "gitlab.com/altiano/golang-boilerplate/src/frameworks/email/mocks"
+	emailMocks "gitlab.com/altiano/goreen-tea/src/frameworks/email/mocks"
 )
 
 type (

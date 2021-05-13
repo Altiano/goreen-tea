@@ -7,7 +7,7 @@ TEMP_FULL_NAME="${1}/${2}"
 
 TEMP_BASE_URL_PLACEHOLDER="<base-url>"
 TEMP_APP_NAME_PLACEHOLDER="<app-name>"
-TEMP_MODULE_NAME=gitlab.com/altiano/golang-boilerplate
+TEMP_MODULE_NAME=gitlab.com/altiano/goreen-tea
 
 
 # Rename current folder

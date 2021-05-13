@@ -3,7 +3,7 @@ package app
 import (
 	"testing"
 
-	"gitlab.com/altiano/golang-boilerplate/src/mocks"
+	"gitlab.com/altiano/goreen-tea/src/mocks"
 )
 
 func setupApp(t *testing.T) (m struct {

@@ -9,7 +9,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	database "gitlab.com/altiano/golang-boilerplate/src/frameworks/database"
+	database "gitlab.com/altiano/goreen-tea/src/frameworks/database"
 	mongo "go.mongodb.org/mongo-driver/mongo"
 	options "go.mongodb.org/mongo-driver/mongo/options"
 )

@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
-	"gitlab.com/altiano/golang-boilerplate/src/mocks"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
+	"gitlab.com/altiano/goreen-tea/src/mocks"
 )
 
 func TestAssist(t *testing.T) {

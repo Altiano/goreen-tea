@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 var (

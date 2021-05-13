@@ -4,10 +4,10 @@ package di
 
 import (
 	"github.com/google/wire"
-	"gitlab.com/altiano/golang-boilerplate/src/app"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/cli"
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/app"
+	"gitlab.com/altiano/goreen-tea/src/frameworks"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/cli"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 func InjectDummyCLI(config shared.Config, app app.App) frameworks.Server {

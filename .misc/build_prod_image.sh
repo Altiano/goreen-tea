@@ -1,3 +1,3 @@
 docker build \
     -f ./docker/prod.dockerfile \
-    -t golang-boilerplate .
+    -t goreen-tea .

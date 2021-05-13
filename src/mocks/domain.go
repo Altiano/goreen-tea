@@ -4,10 +4,10 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	assistanceCoordinatorMocks "gitlab.com/altiano/golang-boilerplate/src/domain/assistanceCoordinator/mocks"
-	coMocks "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/mocks"
-	visitorCounterMocks "gitlab.com/altiano/golang-boilerplate/src/domain/visitorCounter/mocks"
-	waiterMocks "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/mocks"
+	assistanceCoordinatorMocks "gitlab.com/altiano/goreen-tea/src/domain/assistanceCoordinator/mocks"
+	coMocks "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/mocks"
+	visitorCounterMocks "gitlab.com/altiano/goreen-tea/src/domain/visitorCounter/mocks"
+	waiterMocks "gitlab.com/altiano/goreen-tea/src/domain/waiter/mocks"
 )
 
 type (

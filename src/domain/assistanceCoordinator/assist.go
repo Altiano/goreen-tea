@@ -3,8 +3,8 @@ package assistanceCoordinator
 import (
 	"context"
 
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
 )
 
 func (d domain) Assist(ctx context.Context, co coModels.CustomerOrder) error {

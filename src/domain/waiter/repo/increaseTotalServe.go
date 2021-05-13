@@ -3,7 +3,7 @@ package repo
 import (
 	"context"
 
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
 	"go.mongodb.org/mongo-driver/bson"
 )
 

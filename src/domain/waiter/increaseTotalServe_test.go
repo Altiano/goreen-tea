@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
-	"gitlab.com/altiano/golang-boilerplate/src/mocks"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
+	"gitlab.com/altiano/goreen-tea/src/mocks"
 )
 
 func TestIncreaseTotalServe(t *testing.T) {
