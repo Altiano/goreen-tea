@@ -55,6 +55,14 @@ func InjectEcho(config shared.Config, app2 app.App) frameworks.Server {
 	return server
 }
 
+// Injectors from injectGin.go:
+
+func InjectGin(config shared.Config, app2 app.App) frameworks.Server {
+	tracer := trace.NewOtelManager(config)
+	server := rest.NewGin(config, tracer, app2)
+	return server
+}
+
 // Injectors from injectIris.go:
 
 func InjectIris(config shared.Config, app2 app.App) frameworks.Server {
