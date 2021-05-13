@@ -2,7 +2,7 @@ package mocks
 
 import (
 	"github.com/golang/mock/gomock"
-	databaseMocks "gitlab.com/altiano/golang-boilerplate/src/frameworks/database/mocks"
+	databaseMocks "gitlab.com/altiano/goreen-tea/src/frameworks/database/mocks"
 )
 
 type (

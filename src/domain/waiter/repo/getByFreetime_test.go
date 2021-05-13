@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
-	"gitlab.com/altiano/golang-boilerplate/src/mocks"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
+	"gitlab.com/altiano/goreen-tea/src/mocks"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"os"
 
-	application "gitlab.com/altiano/golang-boilerplate/src/app"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks"
+	application "gitlab.com/altiano/goreen-tea/src/app"
+	"gitlab.com/altiano/goreen-tea/src/frameworks"
 )
 
 type dummyCLI struct {

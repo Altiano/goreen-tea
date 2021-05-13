@@ -3,7 +3,7 @@ package customerOrder
 import (
 	"testing"
 
-	"gitlab.com/altiano/golang-boilerplate/src/mocks"
+	"gitlab.com/altiano/goreen-tea/src/mocks"
 )
 
 func setupDomain(t *testing.T) (m struct {

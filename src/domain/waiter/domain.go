@@ -3,9 +3,9 @@ package waiter
 import (
 	"context"
 
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/waiter/repo"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
+	"gitlab.com/altiano/goreen-tea/src/domain/waiter/repo"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
 )
 
 type (

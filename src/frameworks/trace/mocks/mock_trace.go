@@ -9,7 +9,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	trace "gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
+	trace "gitlab.com/altiano/goreen-tea/src/frameworks/trace"
 )
 
 // MockTracer is a mock of Tracer interface.

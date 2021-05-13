@@ -1,15 +1,16 @@
 package rest
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"net/http"
 
 	"github.com/kataras/iris/v12"
-	"gitlab.com/altiano/golang-boilerplate/src/app"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/src/app"
+	"gitlab.com/altiano/goreen-tea/src/frameworks"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 type (
@@ -43,6 +44,28 @@ func (i irisRest) Run() {
 	addr := fmt.Sprintf(":%v", i.Config.AppPort)
 	fmt.Println("Iris running at", addr)
 	app.Listen(addr)
+}
+
+func (i irisRest) createCustomerOrder(irisCtx iris.Context) {
+	var req app.OnsiteOrderReq
+	err := irisCtx.ReadJSON(&req)
+
+	//
+	if err != nil {
+		irisCtx.StatusCode(http.StatusBadRequest)
+		mapResponse(irisCtx, nil, err)
+		return
+	}
+
+	//
+	ctx, span := i.Tracer.Start(context.Background(), "Rest.CreateCustomerOrder")
+	defer span.End()
+	res, err := i.App.OnsiteOrder(ctx, req)
+
+	//
+	mapStatusCode(irisCtx, http.StatusCreated, err)
+	mapResponse(irisCtx, res, err)
+
 }
 
 /*

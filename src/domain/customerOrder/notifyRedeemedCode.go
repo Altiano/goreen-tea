@@ -3,8 +3,8 @@ package customerOrder
 import (
 	"context"
 
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/email"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/email"
 )
 
 func (d domain) NotifyRedeemedCode(ctx context.Context, newCo coModels.CustomerOrder) error {

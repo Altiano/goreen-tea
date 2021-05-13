@@ -3,10 +3,10 @@ package customerOrder
 import (
 	"context"
 
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/repo"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/email"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
+	"gitlab.com/altiano/goreen-tea/src/domain/customerOrder/repo"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/email"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
 )
 
 type (

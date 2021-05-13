@@ -4,5 +4,5 @@ k8s/kustomize
 .DS_Store
 mongo-data
 .mongo-data
-golang-boilerplate
+goreen-tea
 __debug_bin

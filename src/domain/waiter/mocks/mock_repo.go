@@ -9,7 +9,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
 )
 
 // MockRepo is a mock of Repo interface.

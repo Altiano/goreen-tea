@@ -3,7 +3,7 @@ package customerOrder
 import (
 	"context"
 
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
 )
 
 func (d domain) NotifyWaiterName(ctx context.Context, newCo coModels.CustomerOrder, waiterName string) error {

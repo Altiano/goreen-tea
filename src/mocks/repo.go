@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	coMocks "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/mocks"
-	waiterMocks "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/mocks"
+	coMocks "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/mocks"
+	waiterMocks "gitlab.com/altiano/goreen-tea/src/domain/waiter/mocks"
 )
 
 type (

@@ -3,7 +3,7 @@ package repo
 import (
 	"context"
 
-	coModels "gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder/models"
+	coModels "gitlab.com/altiano/goreen-tea/src/domain/customerOrder/models"
 )
 
 func (r *repo) Save(ctx context.Context, co coModels.CustomerOrder) (coModels.CustomerOrder, error) {

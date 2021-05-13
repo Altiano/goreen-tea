@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"gitlab.com/altiano/golang-boilerplate/di"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
-	"gitlab.com/altiano/golang-boilerplate/src/shared"
+	"gitlab.com/altiano/goreen-tea/di"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
+	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
 func main() {
@@ -15,7 +15,9 @@ func main() {
 	// wire DI
 	app := di.InjectApp(config)
 	cli := di.InjectDummyCLI(config, app)
-	rest := di.InjectIris(config, app)
+
+	// rest := di.InjectIris(config, app)
+	rest := di.InjectEcho(config, app)
 
 	fmt.Println("Running... 🔥")
 

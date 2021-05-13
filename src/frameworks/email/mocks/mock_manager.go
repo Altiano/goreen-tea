@@ -8,7 +8,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	email "gitlab.com/altiano/golang-boilerplate/src/frameworks/email"
+	email "gitlab.com/altiano/goreen-tea/src/frameworks/email"
 )
 
 // MockManager is a mock of Manager interface.

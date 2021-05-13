@@ -3,9 +3,9 @@ package repo
 import (
 	"context"
 
-	waiterModels "gitlab.com/altiano/golang-boilerplate/src/domain/waiter/models"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/database"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
+	waiterModels "gitlab.com/altiano/goreen-tea/src/domain/waiter/models"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/database"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
 )
 
 var (

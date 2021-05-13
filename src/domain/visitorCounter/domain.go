@@ -3,8 +3,8 @@ package visitorCounter
 import (
 	"context"
 
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/memcache"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/memcache"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
 )
 
 type (

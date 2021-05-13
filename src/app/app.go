@@ -3,10 +3,10 @@ package app
 import (
 	"context"
 
-	"gitlab.com/altiano/golang-boilerplate/src/domain/assistanceCoordinator"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/customerOrder"
-	"gitlab.com/altiano/golang-boilerplate/src/domain/visitorCounter"
-	"gitlab.com/altiano/golang-boilerplate/src/frameworks/trace"
+	"gitlab.com/altiano/goreen-tea/src/domain/assistanceCoordinator"
+	"gitlab.com/altiano/goreen-tea/src/domain/customerOrder"
+	"gitlab.com/altiano/goreen-tea/src/domain/visitorCounter"
+	"gitlab.com/altiano/goreen-tea/src/frameworks/trace"
 )
 
 type (

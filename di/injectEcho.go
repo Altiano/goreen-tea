@@ -11,11 +11,11 @@ import (
 	"gitlab.com/altiano/goreen-tea/src/shared"
 )
 
-func InjectIris(config shared.Config, app app.App) frameworks.Server {
+func InjectEcho(config shared.Config, app app.App) frameworks.Server {
 	panic(
 		wire.Build(
 			trace.NewOtelManager,
-			rest.NewIris,
+			rest.NewEcho,
 		),
 	)
 }

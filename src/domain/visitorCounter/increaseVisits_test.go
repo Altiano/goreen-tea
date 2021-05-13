@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"gitlab.com/altiano/golang-boilerplate/src/mocks"
+	"gitlab.com/altiano/goreen-tea/src/mocks"
 )
 
 func TestIncreaseVisits(t *testing.T) {

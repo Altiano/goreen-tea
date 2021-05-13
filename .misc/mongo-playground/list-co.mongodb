@@ -2,7 +2,7 @@
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
 
 // The current database to use.
-use('golang-boilerplate');
+use('goreen-tea');
 
 // Search for documents in the current collection.
 db.getCollection('customerOrder')

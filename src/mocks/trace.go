@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/golang/mock/gomock"
-	traceMocks "gitlab.com/altiano/golang-boilerplate/src/frameworks/trace/mocks"
+	traceMocks "gitlab.com/altiano/goreen-tea/src/frameworks/trace/mocks"
 )
 
 type (
