@@ -17,7 +17,8 @@ func main() {
 	cli := di.InjectDummyCLI(config, app)
 
 	// rest := di.InjectIris(config, app)
-	rest := di.InjectEcho(config, app)
+	// rest := di.InjectEcho(config, app)
+	rest := di.InjectGin(config, app)
 
 	fmt.Println("Running... 🔥")
 
